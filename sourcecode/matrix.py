@@ -86,13 +86,13 @@ def find_local_module_file(names=("irgendwas.py", "irgenwas.py")):
     return None
 
 def launch_irgendwas(guess_bg_path=None):
-    #
-    Attempts to run the other module in-process:
+    """
+     Attempts to run the other module in-process:
       - imports module (irgendwas or irgenwas)
       - tries common function names (play, main, run, start_game, run_game, play_game)
       - if function accepts a parameter, passes guess_bg_path
-    If import/call fails, falls back to launching the module as a subprocess with --guess-bg argument.
-    #
+     If import/call fails, falls back to launching the module as a subprocess with --guess-bg argument.
+    """
     module_names = ["irgendwas", "irgenwas"]
     entry_names = ["play", "main", "run", "start_game", "run_game", "play_game"]
     # First try to import
